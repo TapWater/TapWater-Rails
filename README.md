@@ -2,10 +2,10 @@
 
 ## Getting Started
 
-1. Install Ruby 2.0.0 and Rails 4.1.0
-2. Install [Ruby 2.0.0](https://github.com/sstephenson/rbenv) and [Rails 4.1.0](http://rubyonrails.org)
-3. Clone the project from github: `git clone git@github.com:TapWater/TapWater-Rails.git`.
-4. Install the gems in the GEMFILE with bundler: `bundle install`
+1. Install [Ruby 2.0.0](https://github.com/sstephenson/rbenv) and [Rails 4.1.0](http://rubyonrails.org)
+2. Clone the project from github: `git clone git@github.com:TapWater/TapWater-Rails.git`.
+3. Install the gems in the GEMFILE with bundler: `bundle install`
+4. Create a `config/database.yml` file. See `config/database.yml.exmaple` for a template.
 5. Setup the database environment: `rake db:create && rake db:migrate`
 6. Start the rails server: `rails server`
 7. Access the application at "localhost:3000" in your web browser
