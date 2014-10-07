@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: TapWater
+
+test:
+  <<: *default
+  database: TapWater
+
+production:
+  <<: *default
+  database: TapWater_production
+  username: TapWater
+  password: <%= ENV['TAPWATER_DATABASE_PASSWORD'] %>
