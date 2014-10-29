@@ -8,8 +8,7 @@ class User < ActiveRecord::Base
   has_secure_password
   
   # Validations
-  validates_presence_of :username
-  validates :username, length: { minimum: 3 }
-  validates :password, length: { minimum: 6 }
+  validates :username, length: { minimum: 3 }, presence: true, uniqueness: true
+  validates :password, length: { minimum: 6 }, presence: true
   
 end
