@@ -1,6 +1,4 @@
-class Api::V1::UsersController < ApplicationController
-  
-  skip_before_action :verify_authenticity_token
+class Api::V1::UsersController < Api::V1::ApplicationController
   
   def create
     # Create a user with the specified params
@@ -21,12 +19,30 @@ class Api::V1::UsersController < ApplicationController
   end
   
   def authenticate
+    # Find the user
     @user = User.find_by_username(params[:username])
+    
     if @user.present? && @user.authenticate(params[:password])
+      # If the user authenticates render a device token
       generate_device
       render '/users/show', status: :ok
     else
+      # If the user fails to authenticate render a 403
       render json: "The username and password do not match.", status: :forbidden
+    end
+  end
+  
+  def me
+    # Find the device and load its user
+    @device = Device.find_by_device_token(params[:device_token])
+    @user = @device.user if @device
+    
+    if @user
+      # If the credentials are good render the user
+      render '/users/show', status: :ok
+    else
+      # If the credentials are bad render a 403
+      render json: "The user could not be found.", status: :forbidden
     end
   end
   

@@ -8,8 +8,8 @@ class Drink < ActiveRecord::Base
   
   # Validations
   validates :drink_date, presence: true
-  validates :category, presence: true, inclusion: {in: DRINK_CATEGORIES}
+  validates :category, presence: true, inclusion: {in: DRINK_CATEGORIES.values}
   validates :user_id, presence: true
-  validates :uuid, presence: true
+  validates :uuid, presence: true, uniqueness: true
   
 end

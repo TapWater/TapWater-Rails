@@ -22,7 +22,7 @@ class Device < ActiveRecord::Base
     end
     
     # Assign the device token
-    self.device_token = candidate_token
+    self.device_token ||= candidate_token
   end
   
 end

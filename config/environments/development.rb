@@ -1,3 +1,7 @@
+# Set Admin username/password
+ENV['ADMIN_USERNAME'] = "Admin"
+ENV['ADMIN_PASSWORD'] = "password"
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 

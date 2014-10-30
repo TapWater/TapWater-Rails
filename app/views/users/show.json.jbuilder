@@ -1,4 +1,2 @@
-json.user do
-  json.username @user.username
-  json.device_token @device.device_token
-end
+json.username @user.username
+json.device_token @device.device_token
