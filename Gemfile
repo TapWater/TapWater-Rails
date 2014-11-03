@@ -32,9 +32,6 @@ gem 'bcrypt', '~> 3.1.7'
 # Add rails_12_factor for Heroku Platform Features
 gem 'rails_12factor'
 
-# Use unicorn as the app server
-gem 'unicorn'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
