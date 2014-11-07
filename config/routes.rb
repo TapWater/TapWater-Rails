@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :users
   
   # API Routes
-  namespace :api, constraints: {format: :json} do
+  namespace :api, :constraints => {:format => 'json' } do
     namespace :v1 do
       ## Users
       resources :users, only: :create
