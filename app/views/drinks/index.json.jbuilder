@@ -1,3 +1,5 @@
-json.array!(@drinks) do |drink|
-  json.extract! drink, :category, :uuid, :drink_date
+json.drinks do 
+  json.array!(@drinks) do |drink|
+    json.extract! drink, :category, :uuid, :drink_date
+  end
 end
