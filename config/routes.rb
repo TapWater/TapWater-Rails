@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   
   root 'drinks#index'
+
+  resources :admins
+
+  resources :sessions
   
   resources :devices
 

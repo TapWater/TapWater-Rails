@@ -29,3 +29,4 @@
 <br>
 
 <%= link_to 'New Drink', new_drink_path %>
+<%= link_to 'Log Out', session_path(current_admin.id), method: :delete, data: { confirm: "Log out?" } %>
