@@ -9,7 +9,7 @@ class AdminsController < ApplicationController
   def create
     @admin = Admin.new(admin_params)
     if @admin.save
-      redirect_to root_url, :notice => "Signed in"
+      format.html {redirect_to root_url, notice: "Registered." }
     else
       render "new"
     end
