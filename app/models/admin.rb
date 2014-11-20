@@ -3,7 +3,7 @@ require 'bcrypt'
 class Admin < ActiveRecord::Base
 	has_secure_password
 
-	attr_accessor :password_digest
+#	attr_accessor :password_digest
 	include BCrypt
 
 	validates :password, length: { minimum: 6 }, confirmation: true
