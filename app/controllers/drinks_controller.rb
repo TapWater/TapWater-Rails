@@ -1,16 +1,14 @@
 class DrinksController < ApplicationController
   before_action :set_drink, only: [:show, :edit, :update, :destroy]
   
-  # http_basic_authenticate_with name: ENV['ADMIN_USERNAME'], password: ENV['ADMIN_PASSWORD']
-
   # GET /drinks
   # GET /drinks.json
   def index
-    if current_admin
+    # if current_admin
       @drinks = Drink.all
-    else
-      render 'sessions/new'
-    end
+    # else
+    #   redirect_to 'sessions/new'
+    # end
   end
 
   # GET /drinks/1

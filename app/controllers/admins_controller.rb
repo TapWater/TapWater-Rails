@@ -1,4 +1,6 @@
 class AdminsController < ApplicationController
+  before_filter :require_login
+  
   # GET /admins/new
   def new
     @admin = Admin.new
@@ -9,7 +11,7 @@ class AdminsController < ApplicationController
   def create
     @admin = Admin.new(admin_params)
     if @admin.save
-      format.html {redirect_to root_url, notice: "Registered." }
+      redirect_to root_url, :notice => "Registered admin!"
     else
       render "new"
     end

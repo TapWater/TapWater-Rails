@@ -1,3 +1,5 @@
+<p id="notice"><%= notice %></p>
+
 <h1>Listing drinks</h1>
 
 <table>
@@ -29,4 +31,6 @@
 <br>
 
 <%= link_to 'New Drink', new_drink_path %>
+<%= link_to 'New User', new_user_path %> <br>
+<%= link_to 'Register New Admin', new_admin_path %>
 <%= link_to 'Log Out', session_path(current_admin.id), method: :delete, data: { confirm: "Log out?" } %>
