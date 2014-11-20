@@ -32,6 +32,11 @@ gem 'bcrypt', '~> 3.1.7'
 # Add rails_12_factor for Heroku Platform Features
 gem 'rails_12factor'
 
+gem 'tzinfo-data', platforms: [:mingw, :mswin]
+
+require 'rbconfig'
+gem 'wdm', '>= 0.1.0' if RbConfig::CONFIG['target_os'] =~ /mswin|mingw|cygwin/i
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
