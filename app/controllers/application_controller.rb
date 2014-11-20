@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
 
   include BCrypt
 
-  before_filter :get_id
   before_filter :require_login
 
   def require_login
@@ -18,19 +17,10 @@ class ApplicationController < ActionController::Base
 
   private
 
-    def admin_hash
-      admin ||= Admin.find(@id) if @id
-      salt = BCrypt::Engine.generate_salt
-      hash = BCrypt::Engine.hash_secret(admin, salt)
-    end
-
   	def current_admin
-  	  current_admin ||= admin_hash
+  	  current_admin ||= Admin.find_by_admin_hash(session[:admin_hash])
   	end
 
-    def get_id
-      @id = session[:admin_id]
-    end
 
-  helper_method :get_id
+  helper_method :current_admin
 end
