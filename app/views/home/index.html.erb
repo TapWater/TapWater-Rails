@@ -1,0 +1,8 @@
+<h1>Admin Portal</h1>
+
+<%= link_to 'Drinks', drinks_path %> <br>
+<%= link_to 'Users', users_path %> <br>
+<%= link_to 'Devices', devices_path %> <br><br>
+
+<%= link_to 'Register Admin', new_admin_path %><br>
+<%= link_to 'Log Out', session_path(current_admin.id), method: :delete, data: { confirm: "Log out?" } %>

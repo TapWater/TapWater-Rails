@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
-  root 'drinks#index'
+  root 'home#index'
+
+  resources :home
 
   resources :admins
 
