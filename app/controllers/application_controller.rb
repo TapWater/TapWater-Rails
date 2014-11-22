@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   def require_login
   	unless current_admin
-	    redirect_to "/sessions/new", notice: "Please log in to view content"
+	    redirect_to new_session_path, notice: "Please log in to view content"
   	end
   end  
 

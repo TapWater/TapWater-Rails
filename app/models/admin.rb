@@ -8,7 +8,7 @@ class Admin < ActiveRecord::Base
 
   validates :password, length: { minimum: 6 }, confirmation: true
   validates :name, length: { minimum: 3 }, presence: true
-  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, on: :create }, presence: true, uniqueness: true
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }, presence: true, uniqueness: true
 
   def admin_hash
     salt = self[:password_digest]
@@ -21,7 +21,7 @@ class Admin < ActiveRecord::Base
         return admin
       end
     end
-    return nil
+    nil
   end
 
 end

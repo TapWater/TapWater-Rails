@@ -32,8 +32,10 @@ gem 'bcrypt', '~> 3.1.7'
 # Add rails_12_factor for Heroku Platform Features
 gem 'rails_12factor'
 
+# required for time zone libraries. Needed this for Windows platform.
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
+# Windows directory monitor. Used to "monitor directories for changes" in Windows.
 require 'rbconfig'
 gem 'wdm', '>= 0.1.0' if RbConfig::CONFIG['target_os'] =~ /mswin|mingw|cygwin/i
 
